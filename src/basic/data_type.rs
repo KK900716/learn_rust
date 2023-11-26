@@ -1,3 +1,4 @@
+
 pub fn _basic_data_type() {
     let x1: bool = true;
     let x2: i32 = 255;
@@ -50,6 +51,16 @@ pub fn _basic_controller() {
     }
 }
 
-pub fn basic_std() {
+pub fn _basic_std() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("exception");
+    println!("{}", input)
+}
 
+pub fn _inner_basic_err() -> Result<(), String> {
+    return Err(String::from("内"));
+}
+
+pub fn basic_err() {
+    _inner_basic_err().expect("外");
 }

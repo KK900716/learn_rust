@@ -3,5 +3,5 @@ mod basic {
 }
 
 fn main() {
-    basic::data_type::basic_std();
+    basic::data_type::basic_err();
 }
