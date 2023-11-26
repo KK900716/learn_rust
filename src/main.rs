@@ -1,7 +1,7 @@
-mod data_type {
+mod basic {
     pub mod data_type;
 }
 
 fn main() {
-    data_type::data_type::basic_data_type();
+    basic::data_type::basic_std();
 }
