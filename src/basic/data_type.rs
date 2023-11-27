@@ -1,3 +1,6 @@
+use std::io;
+use rand::Rng;
+use std::cmp::Ordering;
 
 pub fn _basic_data_type() {
     let x1: bool = true;
@@ -61,6 +64,31 @@ pub fn _inner_basic_err() -> Result<(), String> {
     return Err(String::from("内"));
 }
 
-pub fn basic_err() {
+pub fn _basic_err() {
     _inner_basic_err().expect("外");
+}
+
+pub fn cai_shu() {
+    let mut input: String = String::new();
+    let x = rand::thread_rng().gen_range(1..101);
+    loop {
+        input.clear();
+        io::stdin().read_line(&mut input).expect("error");
+        match
+        match input.trim().parse::<i32>() {
+            Ok(v) => v.cmp(&x),
+            Err(_) => {
+                println!("input Err");
+                continue;
+            }
+        }
+        {
+            Ordering::Less => println!("猜测小了！"),
+            Ordering::Greater => println!("猜测大了！"),
+            Ordering::Equal => {
+                println!("猜测正确！");
+                break;
+            }
+        }
+    }
 }
